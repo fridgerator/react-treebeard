@@ -41,8 +41,7 @@ describe('container decorator component', () => {
          const onDoubleClick = sinon.spy();
          const container = TestUtils.renderIntoDocument(
              <Container {...defaults}
-                 onDoubleClick={onDoubleClick}
-             />
+                       onDoubleClick={onDoubleClick}/>
          );
          const clickable = container.refs.clickable;
          TestUtils.Simulate.doubleClick(clickable);

@@ -51,6 +51,7 @@ class DemoTree extends React.Component {
 
         this.state = {data};
         this.onToggle = this.onToggle.bind(this);
+        this.onDoubleClick = this.onDoubleClick.bind(this);
     }
 
     onToggle(node, toggled) {
@@ -66,6 +67,10 @@ class DemoTree extends React.Component {
         }
 
         this.setState({cursor: node});
+    }
+
+    onDoubleClick(node) {
+        console.log('node double clicked : ', node);
     }
 
     onFilterMouseUp(e) {
@@ -97,7 +102,8 @@ class DemoTree extends React.Component {
                 <div style={styles.component}>
                     <Treebeard data={stateData}
                                decorators={decorators}
-                               onToggle={this.onToggle}/>
+                               onToggle={this.onToggle}
+                               onDblClick={this.onDoubleClick} />
                 </div>
                 <div style={styles.component}>
                     <NodeViewer node={cursor}/>

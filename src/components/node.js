@@ -24,9 +24,10 @@ class TreeNode extends React.Component {
     }
 
     onDoubleClick() {
-        let onDblClick = this.props.onDblClick;
+        let {node, onDblClick} = this.props;
+
         if (onDblClick) {
-            onDblClick(this.props.node)
+            onDblClick(node);
         }
     }
 
